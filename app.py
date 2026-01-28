@@ -1,15 +1,15 @@
 from flask import Flask, request, render_template, redirect, url_for, session, flash
-from flask_session import Session  # You may need to install Flask-Session
+from flask_session import Session 
 from werkzeug.utils import secure_filename
 import os
 import numpy as np
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
-import joblib  # For loading the logistic regression model and scaler
+import joblib  
 
 app = Flask(__name__)
 
-app.secret_key = 'your_secret_key' 
+app.secret_key = 'key' 
 app.config['SESSION_TYPE'] = 'filesystem'
 
 Session(app)
@@ -119,4 +119,5 @@ def allowed_file(filename):
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True, port=5000)
+
 
