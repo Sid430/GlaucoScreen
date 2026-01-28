@@ -9,7 +9,7 @@ import joblib  # For loading the logistic regression model and scaler
 
 app = Flask(__name__)
 
-app.secret_key = 'your_secret_key'  # You should choose a secure secret key
+app.secret_key = 'your_secret_key' 
 app.config['SESSION_TYPE'] = 'filesystem'
 
 Session(app)
@@ -119,3 +119,4 @@ def allowed_file(filename):
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True, port=5000)
+
